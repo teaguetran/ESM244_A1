@@ -49,9 +49,7 @@ env_vars_PCA <- world_env_vars %>%
   select("Cropland Cover", "Tree Canopy Cover", "Mean Annual Temperature", "Cloudiness") %>% 
   drop_na() %>% 
   scale() %>% #allows us to compare variables evenly
-  prcomp()
-
-env_vars_PCA$rotation
+  prcomp() #run PCA on data
 ```
 
 ```{r,echo = TRUE, message = FALSE, warning = FALSE}
