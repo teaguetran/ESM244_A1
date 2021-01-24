@@ -79,3 +79,5 @@ combined_graph
 
 ```
 
+Figure 1. Mountain yellow-legged frog (*Rona muscosa*) count data from the Sierra Lakes Inventory Project (1995-2002) are shown. The top graph displays total mountain yellow-legged frog count throughout the entire study period and area but excludes frogs in the egg mass life stage. The bottom graph displays the counts of the top 5 lakes where adult and subadult mountain yellow-legged frog counts are the highest. Source: [Knapp et al. 2020](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.577.2)
+
