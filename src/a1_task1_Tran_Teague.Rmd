@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, echo = TRUE, message = FALSE, warning = FALSE}
+#setup
 #Load necessary packages
 library(tidyverse)
 library(janitor)
@@ -29,6 +30,7 @@ sierra_amphibians <- read_excel(here("data", "sierra_amphibians.xlsx"))
 ```
 
 ```{r, echo = TRUE, message = FALSE, warning = FALSE}
+#Task 1 part 1
 #graph total mountain yellow-legged frog count each year by life stage across all bodies
 # create "year" column 
 sierra_amphibians <- sierra_amphibians %>% 
@@ -40,7 +42,7 @@ ylfrog_count <- sierra_amphibians %>%
   filter(amphibian_species == "RAMU", amphibian_life_stage != "EggMass") %>% 
   group_by(year, amphibian_life_stage) %>% 
   count()
-
+#create line graph
 ylfrog_count_graph <- 
   ggplot(data = ylfrog_count, aes(x = year, y = n, color = amphibian_life_stage)) +
   geom_line() + 
@@ -48,6 +50,7 @@ ylfrog_count_graph <-
 
 ```
 ```{r, echo = TRUE, message = FALSE, warning = FALSE}
+#Task 1 part 2
 # create a column graph containing total counts of combined adult and subadult yl frogs observed in the 5 lakes with the greated counts
 ylfrog_top5 <- sierra_amphibians %>% 
   select(lake_id, amphibian_species, amphibian_life_stage) %>% 
@@ -70,6 +73,7 @@ yl_frog_top5_graph <-
 ```
 
 ```{r, echo = TRUE, message = FALSE, warning = FALSE}
+#Task 1 part 3
 #Combine the two graphs I just made into a single compound figure using {patchwork} package
 
 combined_graph <- ylfrog_count_graph / yl_frog_top5_graph
