@@ -388,10 +388,10 @@ env_vars_PCA &lt;- world_env_vars %&gt;%
   drop_na() %&gt;% 
   scale() %&gt;% #allows us to compare variables evenly
   prcomp() #run PCA on data</code></pre>
-<pre class="r"><code>#create pca biplot
+<pre class="r"><code>#needed to create PCA biplot
 env_vars_complete &lt;- world_env_vars %&gt;% 
-  drop_na(cropland_cover, tree_canopy_cover, temp_mean_annual, cloudiness)
-
+  drop_na(&quot;Cropland Cover&quot;, &quot;Tree Canopy Cover&quot;, &quot;Mean Annual Temperature&quot;, &quot;Cloudiness&quot;)
+#create pca biplot
 autoplot(env_vars_PCA,
          data = env_vars_complete, 
          colour = &#39;black&#39;,
@@ -407,13 +407,13 @@ autoplot(env_vars_PCA,
 <ul>
 <li>The principal components in this biplot capture approximately 77% of variance found in the data (PC1 = 42.91% and PC2 = 34.82%)</li>
 <li>Mean annual temperature has a strong negative correlation with cropland cover</li>
-<li>Mean temperature and cropland cover have a weak correlation with tree canopy cover and cloudiness</li>
-<li>Tree canopy cover and cloudiness are positively correlated with each other</li>
+<li>Both mean annual temperature and cropland cover have little to no correlation with either tree canopy cover or cloudiness</li>
+<li>Tree canopy cover has a positive correlation with cloudiness</li>
 </ul>
 </div>
 <div id="citation" class="section level3">
 <h3>Citation:</h3>
-<p>zander_venter. “Environmental Variables for World Countries.” Kaggle.com, 2018, www.kaggle.com/zanderventer/environmental-variables-for-world-countries. Accessed 24 Jan. 2021.</p>
+<p>zander_venter. “Environmental Variables for World Countries.” Kaggle.com, 2018, <a href="www.kaggle.com/zanderventer/environmental-variables-for-world-countries">www.kaggle.com/zanderventer/environmental-variables-for-world-countries</a>. Accessed 24 Jan. 2021.</p>
 </div>
 
 
