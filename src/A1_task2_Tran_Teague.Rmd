@@ -1,5 +1,5 @@
 ---
-title: "a1_task2_Teague_Tran"
+title: "Determining relationships between environmental variables in the world"
 author: "Teague Tran"
 date: "1/23/2021"
 output: html_document
@@ -38,6 +38,7 @@ This short study is to determine if there are relationships between the world's 
 
 
 ```{r,echo = TRUE, message = FALSE, warning = FALSE}
+#Task 2 
 #create new columns with better variable names to make the graph more professional 
 world_env_vars <- world_env_vars %>% 
   mutate("Cropland Cover" = cropland_cover, 
@@ -53,7 +54,7 @@ env_vars_PCA <- world_env_vars %>%
 ```
 
 ```{r,echo = TRUE, message = FALSE, warning = FALSE}
-#create biplot
+#create pca biplot
 env_vars_complete <- world_env_vars %>% 
   drop_na(cropland_cover, tree_canopy_cover, temp_mean_annual, cloudiness)
 
@@ -66,8 +67,7 @@ autoplot(env_vars_PCA,
   labs(title = "Relationship between different envrionmental variables in the world")
 ```
 
-Figure 1. Approximately 77% (PC1 = 42.91% and PC2 = 34.82%) of the variance in the principal components analysis is capture in this biplot. Observations appear to be evenly spread, with a slight cluster between the Mean Annual Temperature arrow and the Tree Canopy Cover arrow.  
-
+Figure 1. Mean annual temperature, tree canopy cover, cloudiness, and cropland cover of different countries (each point represents a country) are plotted. Approximately 77% (PC1 = 42.91% and PC2 = 34.82%) of the variance in the data is captured in this biplot. 
 ### Summary:
 
 - The principal components in this biplot capture approximately 77% of variance found in the data (PC1 = 42.91% and PC2 = 34.82%)
