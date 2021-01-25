@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r,echo = FALSE, message = FALSE, warning = FALSE}
+```{r,echo = TRUE, message = FALSE, warning = FALSE}
 #Set up section
 library(tidyverse)
 library(janitor)
@@ -34,7 +34,7 @@ world_env_vars <- read_csv(here("data", "world_env_vars.csv"))
 
 ### Introduction: 
 
-This short study is to determine if there are relationships between the world's tree canopy cover, mean annual temperature, cloudinessm, and cropland cover. The data used in this study provided by [@zander_venter](https://www.kaggle.com/zanderventer/datasets) on Kaggle, who acquired the data through [Google Earth Engine](https://earthengine.google.com/). To determine the relationships between the variables, we performed a principal components analysis, which captured approximately 77% of the variance when comparing these variables. 
+This short study is to determine if there are relationships between the world's tree canopy cover, mean annual temperature, cloudiness, and cropland cover. The data used in this study provided by [@zander_venter](https://www.kaggle.com/zanderventer/datasets) on Kaggle, who acquired the data through [Google Earth Engine](https://earthengine.google.com/). Mean values for 243 countries were calculated at a reduction scale of 10 km. To determine the relationships between the variables, we performed a principal components analysis, which captured approximately 77% of the variance when comparing these variables. 
 
 
 ```{r,echo = TRUE, message = FALSE, warning = FALSE}
@@ -67,7 +67,8 @@ autoplot(env_vars_PCA,
   labs(title = "Relationship between different envrionmental variables in the world")
 ```
 
-Figure 1. Mean annual temperature, tree canopy cover, cloudiness, and cropland cover of different countries (each point represents a country) are plotted. Approximately 77% (PC1 = 42.91% and PC2 = 34.82%) of the variance in the data is captured in this biplot. 
+Figure 1. Mean annual temperature, tree canopy cover, cloudiness, and cropland cover of different countries (each point represents a country) are plotted. The first two principle components represent 77% (PC1 = 42.91% and PC2 = 34.82%) of the variance of the data.
+
 ### Summary:
 
 - The principal components in this biplot capture approximately 77% of variance found in the data (PC1 = 42.91% and PC2 = 34.82%)
@@ -75,4 +76,5 @@ Figure 1. Mean annual temperature, tree canopy cover, cloudiness, and cropland c
 - Mean temperature and cropland cover have a weak correlation with tree canopy cover and cloudiness
 - Tree canopy cover and cloudiness are positively correlated with each other
 
-
+### Citation:
+zander_venter. “Environmental Variables for World Countries.” Kaggle.com, 2018, www.kaggle.com/zanderventer/environmental-variables-for-world-countries. Accessed 24 Jan. 2021.
